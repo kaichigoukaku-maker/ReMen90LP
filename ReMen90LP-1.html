@@ -1,0 +1,1192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>RE:MAN 90 | 学術を土台に、男の土台を再統合する90日</title>
+  <meta
+    name="description"
+    content="進化生物学・神経科学・行動科学を土台に、身体・習慣・思考・存在感を再統合する、20代〜30代男性向け90日実践プログラム。"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #0a0c10;
+      --bg-soft: #11151b;
+      --panel: rgba(255, 255, 255, 0.04);
+      --panel-strong: rgba(255, 255, 255, 0.07);
+      --line: rgba(255, 255, 255, 0.12);
+      --text: #f5f7fb;
+      --text-soft: #c7ced8;
+      --text-muted: #8f99a6;
+      --accent: #7cc6ff;
+      --accent-strong: #2e9fff;
+      --gold: #d9b15b;
+      --danger-soft: rgba(255, 98, 98, 0.15);
+      --success-soft: rgba(124, 198, 255, 0.12);
+      --radius-sm: 10px;
+      --radius-md: 16px;
+      --radius-lg: 24px;
+      --shadow: 0 18px 50px rgba(0, 0, 0, 0.28);
+      --max-width: 1120px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Noto Sans JP", "Inter", system-ui, sans-serif;
+      background:
+        radial-gradient(circle at top, rgba(46, 159, 255, 0.15), transparent 30%),
+        linear-gradient(180deg, #090b0f 0%, #0a0c10 100%);
+      color: var(--text);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 32px), var(--max-width));
+      margin-inline: auto;
+    }
+
+    .section {
+      padding: 88px 0;
+      position: relative;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 16px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 26px;
+      height: 1px;
+      background: currentColor;
+      opacity: 0.9;
+    }
+
+    .section-title {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.3;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+      margin-bottom: 18px;
+    }
+
+    .section-lead {
+      max-width: 760px;
+      color: var(--text-soft);
+      font-size: 1rem;
+    }
+
+    .grid {
+      display: grid;
+      gap: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 16px 24px;
+      border-radius: 999px;
+      font-weight: 800;
+      transition: 0.25s ease;
+      border: 1px solid transparent;
+      cursor: pointer;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--accent-strong), #1d7ed8);
+      color: #fff;
+      box-shadow: 0 12px 30px rgba(46, 159, 255, 0.28);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 16px 36px rgba(46, 159, 255, 0.34);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border-color: var(--line);
+      color: var(--text);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .card {
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(10px);
+    }
+
+    .hero {
+      padding: 28px 0 96px;
+      position: relative;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(12px);
+      background: rgba(10, 12, 16, 0.78);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .topbar-inner {
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .brand-logo {
+      font-size: 1.05rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+    }
+
+    .brand-copy {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 28px;
+      align-items: center;
+      min-height: calc(100vh - 130px);
+      padding-top: 36px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(124, 198, 255, 0.24);
+      background: rgba(124, 198, 255, 0.08);
+      color: var(--accent);
+      font-size: 0.82rem;
+      font-weight: 700;
+      margin-bottom: 18px;
+    }
+
+    .hero-title {
+      font-size: clamp(2.2rem, 5.2vw, 5rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+      font-weight: 900;
+      margin-bottom: 18px;
+    }
+
+    .hero-title .muted {
+      color: #b8c1cc;
+      display: block;
+      font-size: 0.82em;
+      font-weight: 800;
+      margin-bottom: 10px;
+    }
+
+    .hero-title .accent {
+      color: #fff;
+      text-shadow: 0 0 18px rgba(124, 198, 255, 0.1);
+    }
+
+    .hero-text {
+      max-width: 700px;
+      color: var(--text-soft);
+      font-size: 1.05rem;
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 24px;
+    }
+
+    .hero-note {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+    }
+
+    .hero-panel {
+      padding: 28px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: auto -20% -35% auto;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(124, 198, 255, 0.22), transparent 65%);
+      pointer-events: none;
+    }
+
+    .stat-list {
+      display: grid;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+
+    .stat-item {
+      padding: 16px 18px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-bottom: 6px;
+    }
+
+    .stat-value {
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.45;
+    }
+
+    .panel-caption {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+    }
+
+    .problem-grid,
+    .target-grid,
+    .pillar-grid,
+    .result-grid,
+    .faq-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .three-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .target-card,
+    .problem-card,
+    .pillar-card,
+    .result-card,
+    .faq-item,
+    .process-card,
+    .proof-card,
+    .pricing-card,
+    .founder-card {
+      padding: 24px;
+    }
+
+    .target-card h3,
+    .problem-card h3,
+    .pillar-card h3,
+    .result-card h3,
+    .process-card h3,
+    .proof-card h3,
+    .pricing-card h3,
+    .founder-card h3 {
+      font-size: 1.08rem;
+      line-height: 1.45;
+      margin-bottom: 10px;
+      font-weight: 800;
+    }
+
+    .target-card p,
+    .problem-card p,
+    .pillar-card p,
+    .result-card p,
+    .faq-item p,
+    .process-card p,
+    .proof-card p,
+    .pricing-card p,
+    .founder-card p {
+      color: var(--text-soft);
+      font-size: 0.95rem;
+    }
+
+    .list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .list li {
+      position: relative;
+      padding-left: 18px;
+      color: var(--text-soft);
+      font-size: 0.94rem;
+    }
+
+    .list li::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.82em;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--accent);
+      transform: translateY(-50%);
+    }
+
+    .split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      margin-top: 36px;
+    }
+
+    .compare-card {
+      padding: 28px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+    }
+
+    .compare-card.before {
+      background: linear-gradient(180deg, rgba(255, 98, 98, 0.09), rgba(255, 255, 255, 0.03));
+    }
+
+    .compare-card.after {
+      background: linear-gradient(180deg, rgba(124, 198, 255, 0.12), rgba(255, 255, 255, 0.03));
+    }
+
+    .compare-label {
+      display: inline-block;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+      color: var(--gold);
+    }
+
+    .compare-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .science-box {
+      padding: 28px;
+      margin-top: 32px;
+    }
+
+    .science-box h3 {
+      font-size: 1.2rem;
+      font-weight: 900;
+      margin-bottom: 12px;
+    }
+
+    .science-box p {
+      color: var(--text-soft);
+      margin-bottom: 16px;
+    }
+
+    .science-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .science-tag {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: var(--text);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.03);
+    }
+
+    .process-grid,
+    .proof-grid {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 34px;
+    }
+
+    .process-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      font-size: 0.92rem;
+      font-weight: 900;
+      color: #fff;
+      background: linear-gradient(135deg, var(--accent-strong), #1f74c2);
+      margin-bottom: 14px;
+    }
+
+    .quote-box {
+      margin-top: 26px;
+      padding: 24px;
+      border-left: 3px solid var(--accent);
+      background: rgba(255, 255, 255, 0.035);
+      border-radius: 0 16px 16px 0;
+    }
+
+    .quote-box p {
+      color: var(--text-soft);
+      font-size: 0.98rem;
+    }
+
+    .proof-note {
+      margin-top: 18px;
+      color: var(--text-muted);
+      font-size: 0.84rem;
+    }
+
+    .pricing-wrap {
+      margin-top: 36px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+
+    .pricing-card.featured {
+      border-color: rgba(124, 198, 255, 0.26);
+      background: linear-gradient(180deg, rgba(124, 198, 255, 0.12), rgba(255, 255, 255, 0.035));
+    }
+
+    .price {
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      line-height: 1;
+      font-weight: 900;
+      margin: 16px 0 10px;
+    }
+
+    .price-sub {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+
+    .cta-box {
+      text-align: center;
+      padding: 38px 28px;
+      margin-top: 40px;
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(124, 198, 255, 0.18);
+      background: linear-gradient(180deg, rgba(124, 198, 255, 0.12), rgba(255, 255, 255, 0.03));
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1.3;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .cta-box p {
+      max-width: 760px;
+      margin: 0 auto 24px;
+      color: var(--text-soft);
+    }
+
+    .faq-item {
+      cursor: pointer;
+      transition: 0.2s ease;
+    }
+
+    .faq-item:hover {
+      background: var(--panel-strong);
+    }
+
+    .faq-question {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: center;
+      font-weight: 800;
+      font-size: 1rem;
+    }
+
+    .faq-answer {
+      color: var(--text-soft);
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.25s ease, margin-top 0.25s ease;
+    }
+
+    .faq-item.active .faq-answer {
+      max-height: 220px;
+      margin-top: 12px;
+    }
+
+    .faq-icon {
+      color: var(--accent);
+      font-size: 1.3rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .footer {
+      padding: 28px 0 42px;
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .floating-cta {
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      z-index: 99;
+      transform: translateY(120%);
+      transition: 0.28s ease;
+    }
+
+    .floating-cta.show {
+      transform: translateY(0);
+    }
+
+    .floating-cta .btn {
+      width: 100%;
+      padding: 16px 18px;
+      border-radius: 16px;
+    }
+
+    .muted-line {
+      color: var(--text-muted);
+      font-size: 0.84rem;
+      margin-top: 14px;
+    }
+
+    .accent-text {
+      color: var(--accent);
+      font-weight: 800;
+    }
+
+    @media (max-width: 980px) {
+      .hero-grid,
+      .split,
+      .pricing-wrap,
+      .process-grid,
+      .proof-grid,
+      .problem-grid,
+      .target-grid,
+      .pillar-grid,
+      .result-grid,
+      .faq-grid,
+      .three-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding-bottom: 72px;
+      }
+
+      .hero-grid {
+        min-height: auto;
+      }
+
+      .topbar-inner {
+        min-height: 62px;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .section {
+        padding: 72px 0;
+      }
+
+      .hero-title {
+        font-size: 2.3rem;
+      }
+
+      .hero-panel,
+      .target-card,
+      .problem-card,
+      .pillar-card,
+      .result-card,
+      .faq-item,
+      .process-card,
+      .proof-card,
+      .pricing-card,
+      .founder-card,
+      .science-box,
+      .compare-card,
+      .cta-box {
+        padding: 22px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .hero-actions .btn {
+        width: 100%;
+      }
+    }
+
+    @media (min-width: 981px) {
+      .floating-cta {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div class="brand">
+        <div class="brand-logo">RE:MAN 90</div>
+        <div class="brand-copy">学術を土台に、男の土台を再統合する90日</div>
+      </div>
+      <a href="#cta" class="btn btn-secondary">初回面談に申し込む</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-badge">20代〜30代前半男性向け / 90日実践プログラム</div>
+          <h1 class="hero-title">
+            <span class="muted">学術を土台に、</span>
+            <span class="accent">最高に男らしい状態を、</span><br />
+            気合ではなく<br />
+            <span class="accent">構造</span>でつくる。
+          </h1>
+          <p class="hero-text">
+            RE:MAN 90は、進化生物学・神経科学・行動科学を土台に、
+            身体・習慣・思考・存在感を再統合する90日実践プログラムです。
+            頑張りたいのに続かない、覇気が出ない、自信が安定しない。
+            その状態を根性論で片づけず、現実で機能する男の土台から再設計します。
+          </p>
+
+          <div class="hero-actions">
+            <a href="#cta" class="btn btn-primary">初回面談に申し込む</a>
+            <a href="#program" class="btn btn-secondary">プログラム内容を見る</a>
+          </div>
+
+          <p class="hero-note">
+            ※ LINE登録 / フォーム導線に差し替えて使ってください  
+            ※ 価格・日程・募集人数はあとから変更できます
+          </p>
+        </div>
+
+        <aside class="card hero-panel">
+          <div class="stat-list">
+            <div class="stat-item">
+              <div class="stat-label">このプログラムの考え方</div>
+              <div class="stat-value">男らしさは、生まれつきではなく再構築できる</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">整える領域</div>
+              <div class="stat-value">身体 / 神経系 / 習慣 / 思考 / 対人存在感</div>
+            </div>
+            <div class="stat-item">
+              <div class="stat-label">目指す状態</div>
+              <div class="stat-value">覇気・継続・余裕・存在感が、日常で自然に出る状態</div>
+            </div>
+          </div>
+          <p class="panel-caption">
+            「能力がない」のではなく、
+            <span class="accent-text">機能していないだけ</span>かもしれない。
+            RE:MAN 90は、そのズレを90日で整えるためのプログラムです。
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Target</div>
+        <h2 class="section-title">こんな男性のためのプログラムです</h2>
+        <p class="section-lead">
+          向上心はある。もっと上に行きたい気持ちも強い。
+          でも、現実では仕事・身体・習慣・対人のどこかが噛み合っていない。
+          情報は集めているのに、人生が前に進んでいる感覚がない。
+        </p>
+
+        <div class="grid target-grid" style="margin-top: 34px;">
+          <article class="card target-card">
+            <h3>頑張りたいのに続かない</h3>
+            <p>やる気の波が大きく、良い習慣を作ろうとしても長続きしない。</p>
+          </article>
+          <article class="card target-card">
+            <h3>覇気や自信が安定しない</h3>
+            <p>日によって顔つきや気分、振る舞いに差があり、自分でも軸の弱さを感じる。</p>
+          </article>
+          <article class="card target-card">
+            <h3>情報は多いのに現実が変わらない</h3>
+            <p>YouTube、SNS、筋トレ、自己啓発を見ても、断片的で実生活に定着しない。</p>
+          </article>
+          <article class="card target-card">
+            <h3>男としての土台を作りたい</h3>
+            <p>仕事・恋愛・人間関係すべての土台になる、身体性・存在感・自己統率を整えたい。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="eyebrow">Problem</div>
+        <h2 class="section-title">問題は、意志の弱さではなく<span class="accent-text">未統合</span>です</h2>
+        <p class="section-lead">
+          変われない理由は、能力不足ではなく、身体・神経・習慣・自己認識・対人の在り方が
+          バラバラなままになっていること。RE:MAN 90では、このズレをまとめて整えます。
+        </p>
+
+        <div class="grid problem-grid" style="margin-top: 34px;">
+          <article class="card problem-card">
+            <h3>身体が整っていない</h3>
+            <p>睡眠・食事・運動・姿勢が不安定だと、活力や回復力、顔つきや雰囲気に直結します。</p>
+          </article>
+          <article class="card problem-card">
+            <h3>刺激にハックされている</h3>
+            <p>SNS、比較、刺激物、色情報の過多で、集中力と自己統率が削られやすい状態です。</p>
+          </article>
+          <article class="card problem-card">
+            <h3>意思力頼みになっている</h3>
+            <p>続く仕組みがなく、毎回その場の気分と根性で乗り切ろうとして消耗してしまう。</p>
+          </article>
+          <article class="card problem-card">
+            <h3>存在感が立ち上がっていない</h3>
+            <p>声、姿勢、清潔感、落ち着き、余裕が整っていないと、魅力や信頼感が伝わりにくい。</p>
+          </article>
+        </div>
+
+        <div class="science-box card">
+          <h3>なぜ、根性論では変わらないのか</h3>
+          <p>
+            人間の行動は、気合だけでは長く続きません。RE:MAN 90では、
+            進化生物学・神経科学・行動科学・習慣研究の考え方を土台に、
+            「どうすれば意志に頼りすぎず、男として機能する状態を作れるか」を設計します。
+          </p>
+          <p>
+            学術を“権威”として振りかざすのではなく、
+            <span class="accent-text">日常で使える行動設計</span>に落とし込むことが、このプログラムの特徴です。
+          </p>
+
+          <div class="science-tags">
+            <span class="science-tag">進化生物学</span>
+            <span class="science-tag">神経科学</span>
+            <span class="science-tag">行動科学</span>
+            <span class="science-tag">習慣研究</span>
+            <span class="science-tag">自己統率の設計</span>
+          </div>
+
+          <div class="quote-box">
+            <p>
+              参考思想として、自己決定理論、行動設計、習慣形成研究、実行意図などの知見を土台にしています。
+              学者名や論文名を前面に出すより、「なぜその設計なのか」が伝わる形で反映しています。
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="program">
+      <div class="container">
+        <div class="eyebrow">Program</div>
+        <h2 class="section-title">RE:MAN 90で再設計する5つの領域</h2>
+        <p class="section-lead">
+          男らしさを抽象語で終わらせず、日常で機能する5領域に分解して整えます。
+          どれか一つではなく、土台をまとめて再統合するのが特徴です。
+        </p>
+
+        <div class="grid pillar-grid three-grid" style="margin-top: 34px;">
+          <article class="card pillar-card">
+            <h3>01. 身体</h3>
+            <p>睡眠、栄養、運動、姿勢、体脂肪、回復力。まずは覇気と土台の源泉を整えます。</p>
+            <ul class="list">
+              <li>起床と睡眠の安定化</li>
+              <li>食事リズムの再設計</li>
+              <li>動ける身体の基礎づくり</li>
+            </ul>
+          </article>
+
+          <article class="card pillar-card">
+            <h3>02. 神経系・習慣</h3>
+            <p>刺激依存、集中力低下、衝動性。環境と行動の仕組みを整え、続く状態を作ります。</p>
+            <ul class="list">
+              <li>刺激源の棚卸し</li>
+              <li>朝夜ルーティンの再構築</li>
+              <li>継続できる行動設計</li>
+            </ul>
+          </article>
+
+          <article class="card pillar-card">
+            <h3>03. 認知・思考</h3>
+            <p>自己認識、判断基準、目的意識を整理し、「自分との約束を守れる状態」を作ります。</p>
+            <ul class="list">
+              <li>自己評価のズレの修正</li>
+              <li>目的と優先順位の明確化</li>
+              <li>弱者仕草の言語化と除去</li>
+            </ul>
+          </article>
+
+          <article class="card pillar-card">
+            <h3>04. 対人・存在感</h3>
+            <p>清潔感、声、姿勢、落ち着き、余裕。相手に伝わる“男としての印象”を整えます。</p>
+            <ul class="list">
+              <li>立ち居振る舞いの修正</li>
+              <li>話し方・声の見直し</li>
+              <li>存在感の立ち上げ</li>
+            </ul>
+          </article>
+
+          <article class="card pillar-card">
+            <h3>05. 現実成果</h3>
+            <p>仕事、人間関係、見られ方、自己効力感。日常の結果に変化が出る状態を目指します。</p>
+            <ul class="list">
+              <li>仕事の出力向上</li>
+              <li>周囲からの見られ方の変化</li>
+              <li>日々の手応えの回復</li>
+            </ul>
+          </article>
+
+          <article class="card pillar-card">
+            <h3>90日でやる理由</h3>
+            <p>単発のモチベーション注入ではなく、整える→定着させる→現実に反映するまでを見ます。</p>
+            <ul class="list">
+              <li>短すぎず長すぎない設計</li>
+              <li>習慣化と再設計に必要な期間</li>
+              <li>変化を現実に接続するための長さ</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="eyebrow">Before / After</div>
+        <h2 class="section-title">90日後に目指す変化</h2>
+        <p class="section-lead">
+          RE:MAN 90は、気分が上がるだけのプログラムではありません。
+          毎日の機能と存在感が変わる状態を目指します。
+        </p>
+
+        <div class="split">
+          <div class="compare-card before">
+            <span class="compare-label">Before</span>
+            <h3 class="compare-title">頑張りたいのに、どこか噛み合わない</h3>
+            <ul class="list">
+              <li>なんとなく毎日が流れている</li>
+              <li>やる気に波があり、続かない</li>
+              <li>生活が乱れやすく、覇気が出ない</li>
+              <li>自信が不安定で、詰め切れない</li>
+              <li>情報収集ばかりで現実が変わらない</li>
+              <li>顔つきや身体つき、雰囲気に締まりがない</li>
+            </ul>
+          </div>
+
+          <div class="compare-card after">
+            <span class="compare-label">After</span>
+            <h3 class="compare-title">身体・思考・存在感に芯が通っている</h3>
+            <ul class="list">
+              <li>朝から頭と身体が起動している</li>
+              <li>欲望や感情に振り回されにくい</li>
+              <li>生活習慣が整い、活力が安定している</li>
+              <li>姿勢・顔つき・声に芯が出る</li>
+              <li>継続が特別ではなく、当たり前になる</li>
+              <li>「自分はやれる」が根拠をもって戻る</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Process</div>
+        <h2 class="section-title">プログラムの進み方</h2>
+        <p class="section-lead">
+          ここはあとで実際の運用に合わせて調整してください。
+          いったんLPに載せやすい標準形で作っています。
+        </p>
+
+        <div class="grid process-grid">
+          <article class="card process-card">
+            <div class="process-number">01</div>
+            <h3>初回分析</h3>
+            <p>現状の課題、生活習慣、身体状態、思考のクセ、対人面の課題を整理します。</p>
+          </article>
+
+          <article class="card process-card">
+            <div class="process-number">02</div>
+            <h3>90日設計</h3>
+            <p>5領域の優先順位を決め、無理なく定着する実践計画を組みます。</p>
+          </article>
+
+          <article class="card process-card">
+            <div class="process-number">03</div>
+            <h3>週次伴走</h3>
+            <p>面談やフィードバックを通じて、ズレを修正しながら実行を支えます。</p>
+          </article>
+
+          <article class="card process-card">
+            <div class="process-number">04</div>
+            <h3>現実接続</h3>
+            <p>仕事・対人・日常での変化に接続し、再現できる状態まで落とし込みます。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="eyebrow">Proof</div>
+        <h2 class="section-title">LPで信頼感を出すために、ここはあとで差し込んでください</h2>
+        <p class="section-lead">
+          今はダミー枠です。ここに実績やプロフィールがないと、強い思想でも申込にはつながりにくいです。
+        </p>
+
+        <div class="grid proof-grid">
+          <article class="card proof-card">
+            <h3>支援実績</h3>
+            <p>何人を見てきたのか、どんな変化があったのか。数字や期間があると強いです。</p>
+          </article>
+
+          <article class="card proof-card">
+            <h3>提供者プロフィール</h3>
+            <p>なぜこのテーマをやるのか、どんな思想で支援するのかを明確にします。</p>
+          </article>
+
+          <article class="card proof-card">
+            <h3>事例・変化の声</h3>
+            <p>抽象的な“変わった”ではなく、生活・仕事・印象がどう変化したかを書きます。</p>
+          </article>
+
+          <article class="card proof-card">
+            <h3>設計思想</h3>
+            <p>科学をどう日常設計に落としているのか。難解すぎず、要点だけを見せます。</p>
+          </article>
+        </div>
+
+        <p class="proof-note">
+          ※ 学者名を掲載するなら脚注的に少数で十分です。前面に出しすぎると読みにくくなります。
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="eyebrow">Founder</div>
+        <h2 class="section-title">このプログラムが大切にしている思想</h2>
+
+        <div class="card founder-card" style="margin-top: 28px;">
+          <h3>男らしさを、気合や演出ではなく、土台からつくり直す</h3>
+          <p>
+            RE:MAN 90が目指すのは、見せかけの強さではありません。
+            身体が整い、欲望に振り回されにくくなり、継続が当たり前になり、
+            声・姿勢・存在感に芯が出ること。
+            つまり、<span class="accent-text">現実で機能する男の土台</span>を再構築することです。
+          </p>
+          <p style="margin-top: 14px;">
+            だからこそ、精神論だけで押し切らず、学術を土台にしながらも、
+            最終的には日常の行動と在り方に落とし込むことを重視します。
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="eyebrow">Offer</div>
+        <h2 class="section-title">募集の見せ方</h2>
+
+        <div class="pricing-wrap">
+          <article class="card pricing-card">
+            <h3>初回面談</h3>
+            <p>まずは現状と課題の整理、プログラム適性の確認を行います。</p>
+            <div class="price">無料</div>
+            <div class="price-sub">または 5,000円〜10,000円の有料面談でも可</div>
+            <ul class="list">
+              <li>現状課題の言語化</li>
+              <li>向いているかの確認</li>
+              <li>90日の方向性の提示</li>
+            </ul>
+          </article>
+
+          <article class="card pricing-card featured">
+            <h3>RE:MAN 90 本プログラム</h3>
+            <p>価格は仮置きです。運用内容に合わせて調整してください。</p>
+            <div class="price">¥300,000〜</div>
+            <div class="price-sub">90日 / 個別伴走 / 実践設計型</div>
+            <ul class="list">
+              <li>身体・習慣・思考・存在感を統合設計</li>
+              <li>週次の伴走とフィードバック</li>
+              <li>現実変化まで接続するための実践支援</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="eyebrow">FAQ</div>
+        <h2 class="section-title">よくある質問</h2>
+
+        <div class="grid faq-grid" style="margin-top: 30px;">
+          <article class="card faq-item active">
+            <div class="faq-question">
+              <span>これは筋トレ指導ですか？</span>
+              <span class="faq-icon">＋</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                いいえ。身体づくりは一部ですが、RE:MAN 90は身体・習慣・思考・存在感をまとめて整えるプログラムです。
+              </p>
+            </div>
+          </article>
+
+          <article class="card faq-item">
+            <div class="faq-question">
+              <span>恋愛向けのサービスですか？</span>
+              <span class="faq-icon">＋</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                恋愛だけに特化したものではありません。仕事・対人・日常すべての土台になる“男としての機能”を整える設計です。
+              </p>
+            </div>
+          </article>
+
+          <article class="card faq-item">
+            <div class="faq-question">
+              <span>忙しくても参加できますか？</span>
+              <span class="faq-icon">＋</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                忙しい人ほど、意思力頼みではなく仕組み化が重要です。現在の生活に合わせた設計前提で進めます。
+              </p>
+            </div>
+          </article>
+
+          <article class="card faq-item">
+            <div class="faq-question">
+              <span>どんな人には向いていませんか？</span>
+              <span class="faq-icon">＋</span>
+            </div>
+            <div class="faq-answer">
+              <p>
+                聞いて終わりたい人、実践するつもりがない人、短期間で魔法のような変化だけを求める人には向いていません。
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cta">
+      <div class="container">
+        <div class="cta-box">
+          <div class="eyebrow" style="justify-content: center;">Call To Action</div>
+          <h2>男の土台を、もう一度つくり直す90日へ</h2>
+          <p>
+            頑張りたいのに続かない。覇気が出ない。どこか噛み合っていない。
+            その状態を気合でごまかすのではなく、構造から整えたいなら、
+            まずは初回面談で現状を整理してください。
+          </p>
+          <div class="hero-actions" style="justify-content: center;">
+            <a href="https://example.com" class="btn btn-primary">初回面談に申し込む</a>
+            <a href="https://example.com" class="btn btn-secondary">LINEで相談する</a>
+          </div>
+          <p class="muted-line">
+            ※ リンク先は仮です。LINE / フォーム / Calendly / TIMEREX などに差し替えて使ってください。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div class="floating-cta" id="floatingCta">
+    <a href="#cta" class="btn btn-primary">初回面談に申し込む</a>
+  </div>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© RE:MAN 90</p>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const faqItems = document.querySelectorAll(".faq-item");
+      faqItems.forEach((item) => {
+        item.addEventListener("click", () => {
+          item.classList.toggle("active");
+        });
+      });
+
+      const floatingCta = document.getElementById("floatingCta");
+      const toggleFloatingCta = () => {
+        const scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 600) {
+          floatingCta.classList.add("show");
+        } else {
+          floatingCta.classList.remove("show");
+        }
+      };
+
+      window.addEventListener("scroll", toggleFloatingCta, { passive: true });
+      toggleFloatingCta();
+    })();
+  </script>
+</body>
+</html>
